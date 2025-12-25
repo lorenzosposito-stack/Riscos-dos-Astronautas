@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riscos dos Astronautas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 3px solid #00d4ff;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: #00d4ff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .tabs-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: rgba(22, 33, 62, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 212, 255, 0.2);
+        }
+
+        .tabs {
+            display: flex;
+            gap: 0;
+            background: rgba(0, 0, 0, 0.5);
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 15px 20px;
+            background: transparent;
+            color: #00d4ff;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .tab-button:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-bottom-color: #00d4ff;
+        }
+
+        .tab-button.active {
+            background: rgba(0, 212, 255, 0.2);
+            border-bottom-color: #00d4ff;
+            color: #00ffff;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 40px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .tab-content h2 {
+            color: #00d4ff;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .risk-item {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #00d4ff;
+            border-radius: 5px;
+        }
+
+        .risk-item h3 {
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+
+        .risk-item p {
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: 40px;
+            border-top: 1px solid #00d4ff;
+        }
+
+        @media (max-width: 768px) {
+            .tab-button {
+                font-size: 0.8em;
+                padding: 12px 10px;
+            }
+            
+            header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 Riscos dos Astronautas no Espaço</h1>
+        <p>Conheça os desafios extremos enfrentados por exploradores espaciais</p>
+    </header>
+
+    <div class="tabs-container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'fisicos')">Riscos Físicos</button>
+            <button class="tab-button" onclick="openTab(event, 'saude')">Saúde</button>
+            <button class="tab-button" onclick="openTab(event, 'psicologicos')">Psicológicos</button>
+            <button class="tab-button" onclick="openTab(event, 'equipamento')">Equipamento</button>
+            <button class="tab-button" onclick="openTab(event, 'estatisticas')">Estatísticas</button>
+        </div>
+
+        <div id="fisicos" class="tab-content active">
+            <h2>Riscos Físicos</h2>
+            <div class="risk-item">
+                <h3>Radiação Cósmica</h3>
+                <p>Fora da magnetosfera terrestre, astronautas estão expostos a partículas ionizantes que aumentam o risco de câncer e danos ao DNA.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Microgravidade</h3>
+                <p>A ausência de gravidade causa perda de densidade óssea, atrofia muscular e deslocamento de fluidos corporais.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Impacto de Micrometroritos</h3>
+                <p>Pequenas partículas viajando a alta velocidade podem danificar equipamento ou comprometer a integridade da nave.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Variações Extremas de Temperatura</h3>
+                <p>O espaço varia de -270°C à noite até +120°C sob luz solar direta, testando os limites dos trajes espaciais.</p>
+            </div>
+        </div>
+
+        <div id="saude" class="tab-content">
+            <h2>Riscos à Saúde</h2>
+            <div class="risk-item">
+                <h3>Doença do Descompressão</h3>
+                <p>Mudanças abruptas de pressão podem causar formação de bolhas de nitrogênio no sangue.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Síndrome do Inchaço da Cabeça e Congestionamento Nasal</h3>
+                <p>A redistribuição de fluidos sem gravidade causa inchaço facial e problemas respiratórios.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Problemas de Visão</h3>
+                <p>Mudanças na pressão intracraniana afetam a visão de astronautas em voos prolongados.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Infecções e Sistema Imunológico Comprometido</h3>
+                <p>A microgravidade enfraquece o sistema imunológico, tornando os astronautas mais vulneráveis.</p>
+            </div>
+        </div>
+
+        <div id="psicologicos" class="tab-content">
+            <h2>Riscos Psicológicos</h2>
+            <div class="risk-item">
+                <h3>Isolamento Extremo</h3>
+                <p>Estar confinado no espaço com pouquíssimo contato com a Terra causa ansiedade e depressão.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Síndrome da Visão da Terra (Overview Effect)</h3>
+                <p>A perspectiva transformadora de ver a Terra pode causar alterações emocionais significativas.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Monotonia e Falta de Estímulos</h3>
+                <p>Ambientes monótonos e rotinas repetitivas afetam a saúde mental durante missões longas.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Pressão por Desempenho</h3>
+                <p>Expectativas extremamente altas e responsabilidades críticas causam estresse crônico.</p>
+            </div>
+        </div>
+
+        <div id="equipamento" class="tab-content">
+            <h2>Riscos de Equipamento</h2>
+            <div class="risk-item">
+                <h3>Falha de Traje Espacial</h3>
+                <p>Um pequeno rasgo ou mau funcionamento pode ser fatal em minutos.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Perda de Oxigênio</h3>
+                <p>Sistemas de suporte de vida deficientes colocam a vida em risco iminente.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Falha de Sistemas de Resfriamento</h3>
+                <p>O overaquecimento é potencialmente fatal e pode ocorrer rapidamente.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Entupimento de Filtros</h3>
+                <p>Acúmulo de dióxido de carbono pode levar a intoxicação rápida.</p>
+            </div>
+        </div>
+
+        <div id="estatisticas" class="tab-content">
+            <h2>Dados e Estatísticas</h2>
+            <div class="risk-item">
+                <h3>Perda Óssea</h3>
+                <p>Astronautas perdem aproximadamente 1-2% de densidade óssea por mês em microgravidade.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Exposição à Radiação</h3>
+                <p>Uma missão de 6 meses na ISS expõe o astronauta a radiação equivalente a 150-200 tomografias de tórax.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Taxa de Mortalidade</h3>
+                <p>Desde 1967, 18 astronautas perderam a vida em acidentes espaciais.</p>
+            </div>
+            <div class="risk-item">
+                <h3>Tempo de Recuperação</h3>
+                <p>Podem levar meses ou anos para astronautas se recuperarem completamente após longas missões.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Exploração Espacial - Educação e Conhecimento | Desenvolvido com 🚀</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
